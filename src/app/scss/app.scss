@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&subset=cyrillic');
+@import 'variables';
+@import 'mixins';
+@import 'components/header';
+@import 'components/avatar';
+@import 'components/messages';
+@import 'components/input-panel';
+@import 'components/login-form';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+
+footer, section, header {
+  margin-bottom: 5px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#app {
+  display: flex;
+	align-items: center;
+  height: 100vh;
+  background: #B8A6E4;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 980px;
+  margin: 0 auto;
+  background: $yellow;
+  box-shadow: 0 4px 14px rgba(0,0,0, .3);
+  border-radius: 5px;
+}

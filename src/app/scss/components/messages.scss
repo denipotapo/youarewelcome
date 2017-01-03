@@ -1,0 +1,78 @@
+@import 'mixins';
+
+.messages {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex: 1 1 85%;
+  flex-wrap: wrap;
+  font-size: 15px;
+  overflow: auto;
+  padding: 10px 50px 0 50px;
+
+  &__list {
+    width: 780px;
+    margin: 0 auto;
+  }
+}
+
+.message {
+  margin-bottom: 20px;
+  position: relative;
+  line-height: 1.3;
+  &__username {
+    color: $blue;
+    font-size: 12px;
+    font-weight: normal;
+    order: 0;
+    margin: 0 5px;
+  }
+  &__text {
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-weight: 300;
+    color: $black;
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    line-height: 1.8;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__date {
+    font-size: 10px;
+    order: 1;
+    color: #B8A6E4;
+  }
+  &__container {
+    display: inline-block;
+    max-width: 60%;
+    min-width: 300px;
+  }
+
+  &.right {
+    text-align: right;
+    .message__username {order:1; }
+    .message__date {order:0;}
+  }
+  &.left { text-align: left; }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0, .3);
+    @include border-radius(2px);
+
+    &.left {@include css-arrow(left, $blue, 10px, 20px); }
+    &.right {
+      @include css-arrow(right, $blue, 10px, 20px);
+      text-align: left;
+    }
+  }
+}

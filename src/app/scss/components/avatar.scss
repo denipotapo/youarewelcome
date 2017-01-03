@@ -1,0 +1,4 @@
+.avatar {
+  &.left {@include avatar(left);}
+  &.right {@include avatar(right);}
+}

@@ -1,0 +1,32 @@
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 580px;
+  margin: 0 auto;
+  text-align: center;
+
+  justify-content: center;
+  background: $yellow;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  input {
+    overflow: auto;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    padding-right: 40px;
+    padding-left: 10px;
+    font-size: 14px;
+    border: 1px solid black;
+    line-height: normal;
+     &:focus {
+       outline: none;
+     }
+  }
+}

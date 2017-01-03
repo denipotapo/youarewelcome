@@ -1,0 +1,80 @@
+//* @include css-arrow(right, $yellow, 10px, 50%); */
+@mixin css-arrow($arrow-position, $arrow-color, $arrow-size, $arrow-offset:50%) {
+  &:after {
+    position: absolute;
+    border: solid transparent;
+    content: " ";
+    top: auto;
+    left: auto;
+    height: 0;
+    width: 0;
+    margin: 0;
+    border-color: transparent;
+    border-width: $arrow-size;
+    pointer-events: none;
+  }
+  @if $arrow-position == "top" {
+    &:after {
+      bottom: 100%;
+      border-bottom-color: $arrow-color;
+      margin-left: (-$arrow-size);
+      left: $arrow-offset;
+    }
+  }
+  @if $arrow-position == "right" {
+    &:after {
+      left: 100%;
+      border-left-color: $arrow-color;
+      margin-top: (-$arrow-size);
+      top: $arrow-offset;
+    }
+  }
+  @if $arrow-position == "bottom" {
+    &:after {
+      top: 100%;
+      border-top-color: $arrow-color;
+      margin-left: (-$arrow-size);
+      left: $arrow-offset;
+    }
+  }
+  @if $arrow-position == "left" {
+    &:after {
+      right: 100%;
+      border-right-color: $arrow-color;
+      margin-top: (-$arrow-size);
+      top: $arrow-offset;
+    }
+  }
+}
+
+
+//* Border radius *//
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//* Avatar *//
+@mixin avatar($direction: none, $h:40px, $w:40px, $radius:50%, $bg:black) {
+  float: $direction;
+  width: $w;
+  max-width: $w;
+  height: $h;
+  max-height: $h;
+  background: $bg;
+  box-shadow: 0 4px 10px rgba(0,0,0, .3);
+  @include border-radius($radius);
+  @if $direction == "right" {
+    margin-left: 15px;
+  }
+  @if $direction == "left" {
+    margin-right: 15px;
+  }
+}
+
+//* Message *//
+@mixin message($direction) {
+  text-align: $direction;
+}
